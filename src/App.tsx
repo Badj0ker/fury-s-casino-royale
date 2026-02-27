@@ -8,6 +8,7 @@ import GameLayout from "@/components/GameLayout";
 import Dashboard from "@/pages/Dashboard";
 import WorldMapPage from "@/pages/WorldMapPage";
 import BattlePage from "@/pages/BattlePage";
+import BossEventPage from "@/pages/BossEventPage";
 import QuestsPage from "@/pages/QuestsPage";
 import InventoryPage from "@/pages/InventoryPage";
 import NotFound from "./pages/NotFound";
@@ -26,6 +27,7 @@ const App = () => (
               <Route path="/" element={<Dashboard />} />
               <Route path="/world-map" element={<WorldMapPage />} />
               <Route path="/battle" element={<BattlePage />} />
+              <Route path="/boss-event" element={<BossEventPage />} />
               <Route path="/quests" element={<QuestsPage />} />
               <Route path="/inventory" element={<InventoryPage />} />
             </Route>
