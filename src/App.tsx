@@ -3,7 +3,13 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
+import { GameProvider } from "@/contexts/GameContext";
+import GameLayout from "@/components/GameLayout";
+import Dashboard from "@/pages/Dashboard";
+import WorldMapPage from "@/pages/WorldMapPage";
+import BattlePage from "@/pages/BattlePage";
+import QuestsPage from "@/pages/QuestsPage";
+import InventoryPage from "@/pages/InventoryPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -13,13 +19,20 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <GameProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route element={<GameLayout />}>
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/world-map" element={<WorldMapPage />} />
+              <Route path="/battle" element={<BattlePage />} />
+              <Route path="/quests" element={<QuestsPage />} />
+              <Route path="/inventory" element={<InventoryPage />} />
+            </Route>
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </GameProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );
