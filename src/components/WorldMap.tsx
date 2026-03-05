@@ -1,6 +1,14 @@
 import { useGame } from "@/contexts/GameContext";
 import { useNavigate } from "react-router-dom";
 import worldMapBg from "@/assets/world-map-bg.png";
+import worldMapRian from "@/assets/world-map-rian.png";
+import worldMapSteve from "@/assets/world-map-steve.png";
+
+const MAP_BACKGROUNDS: Record<string, string> = {
+  "fury-strip": worldMapBg,
+  "rian-strip": worldMapRian,
+  "steve-underworld": worldMapSteve,
+};
 
 export default function WorldMap() {
   const { maps, currentMapId, zones, player, startBattle, switchMap, dungeons } = useGame();
@@ -44,7 +52,7 @@ export default function WorldMap() {
 
       {/* Map description */}
       <div className="relative rounded-xl overflow-hidden mb-6">
-        <img src={worldMapBg} alt="Casino World Map" className="w-full h-48 object-cover rounded-xl opacity-60" />
+        <img src={MAP_BACKGROUNDS[currentMapId] || worldMapBg} alt="Casino World Map" className="w-full h-48 object-cover rounded-xl opacity-60" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent flex items-end p-4">
           <div>
             <h2 className="font-display text-xl font-bold">{currentMap.icon} {currentMap.name}</h2>
