@@ -83,6 +83,32 @@ export type StatusEffect = {
   type: "dot" | "buff" | "debuff";
 };
 
+export interface GameMap {
+  id: string;
+  name: string;
+  icon: string;
+  description: string;
+  zones: Zone[];
+}
+
+export interface DungeonRoom {
+  roomNumber: number;
+  enemy: Enemy;
+  isBoss: boolean;
+}
+
+export interface Dungeon {
+  id: string;
+  name: string;
+  icon: string;
+  zoneId: string;
+  mapId: string;
+  requiredLevel: number;
+  rooms: DungeonRoom[];
+  itemDropChance: number;
+  goldReward: [number, number];
+}
+
 // ============ DEFAULT DATA ============
 
 export const DEFAULT_PLAYER: PlayerStats = {

@@ -12,6 +12,7 @@ import BossEventPage from "@/pages/BossEventPage";
 import QuestsPage from "@/pages/QuestsPage";
 import InventoryPage from "@/pages/InventoryPage";
 import NotFound from "./pages/NotFound";
+import DungeonPage from "@/pages/DungeonPage";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,7 @@ const App = () => (
               <Route path="/boss-event" element={<BossEventPage />} />
               <Route path="/quests" element={<QuestsPage />} />
               <Route path="/inventory" element={<InventoryPage />} />
+              <Route path="/dungeon/:dungeonId" element={<DungeonPage />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
