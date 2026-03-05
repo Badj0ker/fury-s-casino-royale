@@ -6,6 +6,7 @@ const navItems = [
   { path: "/", label: "Dashboard", icon: "🏠" },
   { path: "/world-map", label: "World Map", icon: "🗺️" },
   { path: "/battle", label: "Battle", icon: "⚔️" },
+  { path: "/dungeons", label: "Dungeons", icon: "🏰" },
   { path: "/boss-event", label: "Boss Raid", icon: "👑" },
   { path: "/quests", label: "Quests", icon: "📜" },
   { path: "/inventory", label: "Inventory", icon: "🎒" },

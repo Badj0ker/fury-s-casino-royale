@@ -13,6 +13,7 @@ import QuestsPage from "@/pages/QuestsPage";
 import InventoryPage from "@/pages/InventoryPage";
 import NotFound from "./pages/NotFound";
 import DungeonPage from "@/pages/DungeonPage";
+import DungeonsPage from "@/pages/DungeonsPage";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
               <Route path="/" element={<Dashboard />} />
               <Route path="/world-map" element={<WorldMapPage />} />
               <Route path="/battle" element={<BattlePage />} />
+              <Route path="/dungeons" element={<DungeonsPage />} />
               <Route path="/boss-event" element={<BossEventPage />} />
               <Route path="/quests" element={<QuestsPage />} />
               <Route path="/inventory" element={<InventoryPage />} />
