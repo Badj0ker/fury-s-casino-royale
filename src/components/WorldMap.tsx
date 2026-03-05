@@ -10,6 +10,40 @@ const MAP_BACKGROUNDS: Record<string, string> = {
   "steve-underworld": worldMapSteve,
 };
 
+// Zone positions on each map (percentage-based)
+const ZONE_POSITIONS: Record<string, { top: string; left: string }[]> = {
+  "fury-strip": [
+    { top: "75%", left: "15%" },
+    { top: "58%", left: "38%" },
+    { top: "42%", left: "62%" },
+    { top: "28%", left: "40%" },
+    { top: "12%", left: "72%" },
+  ],
+  "rian-strip": [
+    { top: "78%", left: "20%" },
+    { top: "60%", left: "55%" },
+    { top: "45%", left: "25%" },
+    { top: "30%", left: "60%" },
+    { top: "10%", left: "45%" },
+  ],
+  "steve-underworld": [
+    { top: "76%", left: "55%" },
+    { top: "58%", left: "20%" },
+    { top: "42%", left: "65%" },
+    { top: "25%", left: "35%" },
+    { top: "8%", left: "55%" },
+  ],
+};
+
+// SVG path connections between zones
+function getPathD(positions: { top: string; left: string }[]) {
+  return positions.map((p, i) => {
+    const x = parseFloat(p.left);
+    const y = parseFloat(p.top);
+    return `${i === 0 ? "M" : "L"} ${x} ${y}`;
+  }).join(" ");
+}
+
 export default function WorldMap() {
   const { maps, currentMapId, zones, player, startBattle, switchMap, dungeons } = useGame();
   const navigate = useNavigate();
@@ -26,6 +60,7 @@ export default function WorldMap() {
   };
 
   const currentMap = maps.find(m => m.id === currentMapId)!;
+  const positions = ZONE_POSITIONS[currentMapId] || ZONE_POSITIONS["fury-strip"];
 
   return (
     <div className="animate-fade-in">
@@ -50,18 +85,104 @@ export default function WorldMap() {
         ))}
       </div>
 
-      {/* Map description */}
-      <div className="relative rounded-xl overflow-hidden mb-6">
-        <img src={MAP_BACKGROUNDS[currentMapId] || worldMapBg} alt="Casino World Map" className="w-full h-48 object-cover rounded-xl opacity-60" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent flex items-end p-4">
-          <div>
-            <h2 className="font-display text-xl font-bold">{currentMap.icon} {currentMap.name}</h2>
-            <p className="text-sm text-muted-foreground">{currentMap.description}</p>
-          </div>
+      {/* Interactive Visual Map */}
+      <div className="relative rounded-xl overflow-hidden mb-6 border border-border" style={{ height: "420px" }}>
+        <img
+          src={MAP_BACKGROUNDS[currentMapId] || worldMapBg}
+          alt={currentMap.name}
+          className="w-full h-full object-cover"
+        />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-background/40" />
+
+        {/* Connection paths (SVG) */}
+        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path
+            d={getPathD(positions)}
+            fill="none"
+            stroke="hsl(var(--primary))"
+            strokeWidth="0.4"
+            strokeDasharray="1.5 1"
+            opacity="0.5"
+          />
+          {/* Glow path */}
+          <path
+            d={getPathD(positions)}
+            fill="none"
+            stroke="hsl(var(--secondary))"
+            strokeWidth="0.2"
+            strokeDasharray="1.5 1"
+            opacity="0.3"
+          />
+        </svg>
+
+        {/* Zone markers */}
+        {zones.map((zone, i) => {
+          const pos = positions[i];
+          if (!pos) return null;
+          const isLocked = !zone.unlocked;
+          const progressPct = (zone.progress / zone.maxProgress) * 100;
+
+          return (
+            <button
+              key={zone.id}
+              onClick={() => handleZoneClick(zone.id)}
+              disabled={isLocked}
+              className="absolute group"
+              style={{
+                top: pos.top,
+                left: pos.left,
+                transform: "translate(-50%, -50%)",
+              }}
+            >
+              {/* Glow pulse for unlocked */}
+              {!isLocked && (
+                <div className="absolute inset-0 -m-3 rounded-full bg-primary/20 animate-pulse" />
+              )}
+
+              {/* Node circle */}
+              <div
+                className={`relative w-12 h-12 rounded-full flex items-center justify-center text-xl border-2 transition-all ${
+                  isLocked
+                    ? "bg-muted/80 border-muted-foreground/30 opacity-50 cursor-not-allowed"
+                    : zone.completed
+                    ? "bg-card border-health shadow-[0_0_12px_hsl(var(--health)/0.5)]"
+                    : "bg-card border-primary shadow-[0_0_12px_hsl(var(--primary)/0.4)] hover:scale-110 hover:shadow-[0_0_20px_hsl(var(--primary)/0.6)] cursor-pointer"
+                }`}
+              >
+                {isLocked ? "🔒" : zone.icon}
+              </div>
+
+              {/* Label */}
+              <div
+                className={`absolute left-1/2 -translate-x-1/2 mt-1 whitespace-nowrap px-2 py-1 rounded-md text-[10px] font-display font-bold transition-all ${
+                  isLocked
+                    ? "bg-muted/70 text-muted-foreground"
+                    : "bg-card/90 text-foreground border border-border group-hover:border-primary/50"
+                }`}
+              >
+                {zone.name}
+                {isLocked && <span className="ml-1 text-muted-foreground">Lv.{zone.requiredLevel}</span>}
+                {!isLocked && !zone.completed && (
+                  <div className="mt-1 h-1 rounded-full bg-muted overflow-hidden w-16 mx-auto">
+                    <div className="bar-xp h-full rounded-full" style={{ width: `${progressPct}%` }} />
+                  </div>
+                )}
+                {zone.completed && <span className="ml-1 text-health">✅</span>}
+              </div>
+            </button>
+          );
+        })}
+
+        {/* Map title overlay */}
+        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background via-background/60 to-transparent p-4">
+          <h2 className="font-display text-lg font-bold">{currentMap.icon} {currentMap.name}</h2>
+          <p className="text-xs text-muted-foreground">{currentMap.description}</p>
         </div>
       </div>
 
-      {/* Zone Cards */}
+      {/* Zone Cards + Dungeons list below */}
+      <h3 className="font-display text-lg font-bold mb-3 text-secondary">Zones & Dungeons</h3>
       <div className="space-y-3">
         {zones.map((zone, i) => {
           const isLocked = !zone.unlocked;
