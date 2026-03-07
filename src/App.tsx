@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { GameProvider } from "@/contexts/GameContext";
+import { CoopProvider } from "@/contexts/CoopContext";
 import GameLayout from "@/components/GameLayout";
 import Dashboard from "@/pages/Dashboard";
 import WorldMapPage from "@/pages/WorldMapPage";
@@ -14,6 +15,8 @@ import InventoryPage from "@/pages/InventoryPage";
 import NotFound from "./pages/NotFound";
 import DungeonPage from "@/pages/DungeonPage";
 import DungeonsPage from "@/pages/DungeonsPage";
+import CoopDungeonsPage from "@/pages/CoopDungeonsPage";
+import CoopBattlePage from "@/pages/CoopBattlePage";
 
 const queryClient = new QueryClient();
 
