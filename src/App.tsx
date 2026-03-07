@@ -26,21 +26,25 @@ const App = () => (
       <Toaster />
       <Sonner />
       <GameProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route element={<GameLayout />}>
-              <Route path="/" element={<Dashboard />} />
-              <Route path="/world-map" element={<WorldMapPage />} />
-              <Route path="/battle" element={<BattlePage />} />
-              <Route path="/dungeons" element={<DungeonsPage />} />
-              <Route path="/boss-event" element={<BossEventPage />} />
-              <Route path="/quests" element={<QuestsPage />} />
-              <Route path="/inventory" element={<InventoryPage />} />
-              <Route path="/dungeon/:dungeonId" element={<DungeonPage />} />
-            </Route>
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
+        <CoopProvider>
+          <BrowserRouter>
+            <Routes>
+              <Route element={<GameLayout />}>
+                <Route path="/" element={<Dashboard />} />
+                <Route path="/world-map" element={<WorldMapPage />} />
+                <Route path="/battle" element={<BattlePage />} />
+                <Route path="/dungeons" element={<DungeonsPage />} />
+                <Route path="/coop-dungeons" element={<CoopDungeonsPage />} />
+                <Route path="/boss-event" element={<BossEventPage />} />
+                <Route path="/quests" element={<QuestsPage />} />
+                <Route path="/inventory" element={<InventoryPage />} />
+                <Route path="/dungeon/:dungeonId" element={<DungeonPage />} />
+                <Route path="/coop/:dungeonId" element={<CoopBattlePage />} />
+              </Route>
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </CoopProvider>
       </GameProvider>
     </TooltipProvider>
   </QueryClientProvider>
