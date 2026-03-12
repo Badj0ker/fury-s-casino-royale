@@ -29,6 +29,7 @@ const App = () => (
       <Sonner />
       <GameProvider>
         <CoopProvider>
+          <PvpProvider>
           <BrowserRouter>
             <Routes>
               <Route element={<GameLayout />}>
