@@ -43,6 +43,7 @@ const App = () => (
                 <Route path="/inventory" element={<InventoryPage />} />
                 <Route path="/dungeon/:dungeonId" element={<DungeonPage />} />
                 <Route path="/coop/:dungeonId" element={<CoopBattlePage />} />
+                <Route path="/pvp-arena" element={<PvpArenaPage />} />
               </Route>
               <Route path="*" element={<NotFound />} />
             </Routes>
