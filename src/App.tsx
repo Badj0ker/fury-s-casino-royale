@@ -17,6 +17,8 @@ import DungeonPage from "@/pages/DungeonPage";
 import DungeonsPage from "@/pages/DungeonsPage";
 import CoopDungeonsPage from "@/pages/CoopDungeonsPage";
 import CoopBattlePage from "@/pages/CoopBattlePage";
+import PvpArenaPage from "@/pages/PvpArenaPage";
+import { PvpProvider } from "@/contexts/PvpContext";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +29,7 @@ const App = () => (
       <Sonner />
       <GameProvider>
         <CoopProvider>
+          <PvpProvider>
           <BrowserRouter>
             <Routes>
               <Route element={<GameLayout />}>
@@ -40,10 +43,12 @@ const App = () => (
                 <Route path="/inventory" element={<InventoryPage />} />
                 <Route path="/dungeon/:dungeonId" element={<DungeonPage />} />
                 <Route path="/coop/:dungeonId" element={<CoopBattlePage />} />
+                <Route path="/pvp-arena" element={<PvpArenaPage />} />
               </Route>
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
+          </PvpProvider>
         </CoopProvider>
       </GameProvider>
     </TooltipProvider>
