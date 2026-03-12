@@ -17,6 +17,8 @@ import DungeonPage from "@/pages/DungeonPage";
 import DungeonsPage from "@/pages/DungeonsPage";
 import CoopDungeonsPage from "@/pages/CoopDungeonsPage";
 import CoopBattlePage from "@/pages/CoopBattlePage";
+import PvpArenaPage from "@/pages/PvpArenaPage";
+import { PvpProvider } from "@/contexts/PvpContext";
 
 const queryClient = new QueryClient();
 
