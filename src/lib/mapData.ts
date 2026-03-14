@@ -275,8 +275,8 @@ export const GAME_MAPS: GameMap[] = [
   { id: "fury-strip", name: "FURY's Strip", icon: "🦝", description: "The original casino strip ruled by FURY the raccoon.", zones: ZONES },
   { id: "rian-strip", name: "Rian's Royal Strip", icon: "👑", description: "An opulent casino empire ruled by the House King.", zones: RIAN_ZONES },
   { id: "steve-underworld", name: "Steve's Underworld", icon: "🔨", description: "A brutal underground circuit controlled by the Banhammer.", zones: STEVE_ZONES },
-  { id: "shadow-syndicate", name: "Shadow Syndicate", icon: "🖤", description: "A hidden criminal empire cloaked in darkness. Level 40+ only.", zones: SHADOW_ZONES },
-  { id: "inferno-colosseum", name: "Inferno Colosseum", icon: "🔥", description: "The ultimate endgame arena forged in hellfire. Level 50+ only.", zones: INFERNO_ZONES },
+  { id: "shadow-syndicate", name: "Diana's Shadow Syndicate", icon: "🖤", description: "Diana's hidden criminal empire cloaked in darkness. Level 40+ only.", zones: SHADOW_ZONES },
+  { id: "inferno-colosseum", name: "Emily's Inferno Colosseum", icon: "🔥", description: "Emily's ultimate endgame arena forged in hellfire. Level 50+ only.", zones: INFERNO_ZONES },
 ];
 
 // ============ DUNGEONS ============
