@@ -3,11 +3,15 @@ import { useNavigate } from "react-router-dom";
 import worldMapBg from "@/assets/world-map-bg.png";
 import worldMapRian from "@/assets/world-map-rian.png";
 import worldMapSteve from "@/assets/world-map-steve.png";
+import worldMapShadow from "@/assets/world-map-shadow.png";
+import worldMapInferno from "@/assets/world-map-inferno.png";
 
 const MAP_BACKGROUNDS: Record<string, string> = {
   "fury-strip": worldMapBg,
   "rian-strip": worldMapRian,
   "steve-underworld": worldMapSteve,
+  "shadow-syndicate": worldMapShadow,
+  "inferno-colosseum": worldMapInferno,
 };
 
 // Zone positions on each map (percentage-based)
