@@ -144,11 +144,139 @@ const STEVE_ZONES: Zone[] = [
   },
 ];
 
+// ============ MAP 4: SHADOW SYNDICATE (Lv 40+) ============
+const SHADOW_ZONES: Zone[] = [
+  {
+    id: "phantom-gate", name: "Phantom's Gate", icon: "👻",
+    description: "The entrance to the Shadow Syndicate. Only the elite survive.",
+    requiredLevel: 40,
+    enemies: [
+      { id: "phantom-sentry", name: "Phantom Sentry", emoji: "👁️‍🗨️", hp: 450, maxHp: 450, attack: 55, defense: 35, role: "tank", xpReward: 280, goldReward: 220 },
+      { id: "shadow-stalker", name: "Shadow Stalker", emoji: "🥷", hp: 380, maxHp: 380, attack: 68, defense: 28, role: "dps", xpReward: 300, goldReward: 240 },
+      { id: "void-whisperer", name: "Void Whisperer", emoji: "🌑", hp: 320, maxHp: 320, attack: 45, defense: 22, role: "healer", xpReward: 260, goldReward: 200, abilities: ["Dark Mend"] },
+      { id: "phantom-lord", name: "Phantom Lord", emoji: "💀", hp: 650, maxHp: 650, attack: 72, defense: 40, role: "elite", xpReward: 450, goldReward: 380, abilities: ["Phase Shift", "Soul Drain"] },
+    ],
+    unlocked: false, completed: false, progress: 0, maxProgress: 10, bgColor: "from-violet-600/20 to-card",
+  },
+  {
+    id: "neon-abyss", name: "Neon Abyss Casino", icon: "💜",
+    description: "A hidden casino where neon lights mask deadly traps.",
+    requiredLevel: 42,
+    enemies: [
+      { id: "neon-assassin", name: "Neon Assassin", emoji: "⚡", hp: 400, maxHp: 400, attack: 72, defense: 30, role: "dps", xpReward: 320, goldReward: 260 },
+      { id: "abyss-dealer", name: "Abyss Dealer", emoji: "🃏", hp: 480, maxHp: 480, attack: 58, defense: 38, role: "tank", xpReward: 340, goldReward: 270 },
+      { id: "glitch-hacker", name: "Glitch Hacker", emoji: "🖥️", hp: 350, maxHp: 350, attack: 50, defense: 25, role: "healer", xpReward: 290, goldReward: 230, abilities: ["System Hack"] },
+      { id: "neon-overlord", name: "Neon Overlord", emoji: "👾", hp: 720, maxHp: 720, attack: 78, defense: 44, role: "boss", xpReward: 500, goldReward: 420, abilities: ["Neon Storm", "Overload"] },
+    ],
+    unlocked: false, completed: false, progress: 0, maxProgress: 10, bgColor: "from-purple-600/20 to-card",
+  },
+  {
+    id: "crimson-vault", name: "Crimson Vault", icon: "🔴",
+    description: "Blood-red corridors guard unimaginable riches.",
+    requiredLevel: 44,
+    enemies: [
+      { id: "crimson-knight", name: "Crimson Knight", emoji: "🛡️", hp: 550, maxHp: 550, attack: 62, defense: 45, role: "tank", xpReward: 360, goldReward: 300 },
+      { id: "blood-dealer", name: "Blood Dealer", emoji: "🩸", hp: 420, maxHp: 420, attack: 78, defense: 32, role: "dps", xpReward: 380, goldReward: 310 },
+      { id: "vault-wraith", name: "Vault Wraith", emoji: "👤", hp: 380, maxHp: 380, attack: 55, defense: 28, role: "healer", xpReward: 320, goldReward: 260, abilities: ["Crimson Heal"] },
+      { id: "crimson-titan", name: "Crimson Titan", emoji: "🗿", hp: 800, maxHp: 800, attack: 85, defense: 48, role: "elite", xpReward: 550, goldReward: 460, abilities: ["Blood Rage", "Crimson Slam"] },
+    ],
+    unlocked: false, completed: false, progress: 0, maxProgress: 10, bgColor: "from-red-700/20 to-card",
+  },
+  {
+    id: "eclipse-pit", name: "Eclipse Betting Pit", icon: "🌘",
+    description: "Where bets are paid in blood and fortunes vanish into darkness.",
+    requiredLevel: 47,
+    enemies: [
+      { id: "eclipse-broker", name: "Eclipse Broker", emoji: "📉", hp: 500, maxHp: 500, attack: 80, defense: 38, role: "dps", xpReward: 420, goldReward: 350 },
+      { id: "dark-enforcer", name: "Dark Enforcer", emoji: "⚫", hp: 600, maxHp: 600, attack: 68, defense: 50, role: "tank", xpReward: 440, goldReward: 370 },
+      { id: "shade-medic", name: "Shade Medic", emoji: "💊", hp: 420, maxHp: 420, attack: 52, defense: 30, role: "healer", xpReward: 380, goldReward: 300, abilities: ["Shadow Mend"] },
+      { id: "eclipse-warden", name: "Eclipse Warden", emoji: "🌑", hp: 900, maxHp: 900, attack: 92, defense: 52, role: "elite", xpReward: 600, goldReward: 500, abilities: ["Total Eclipse", "Gravity Well"] },
+    ],
+    unlocked: false, completed: false, progress: 0, maxProgress: 10, bgColor: "from-gray-800/20 to-card",
+  },
+  {
+    id: "syndicate-throne", name: "Syndicate Throne", icon: "🖤",
+    description: "The Shadow Boss awaits. None have returned alive.",
+    requiredLevel: 50,
+    enemies: [
+      { id: "syndicate-elite", name: "Syndicate Elite", emoji: "⚔️", hp: 650, maxHp: 650, attack: 88, defense: 48, role: "dps", xpReward: 500, goldReward: 420 },
+      { id: "shadow-colossus", name: "Shadow Colossus", emoji: "🗿", hp: 800, maxHp: 800, attack: 72, defense: 58, role: "tank", xpReward: 520, goldReward: 440 },
+      { id: "syndicate-boss", name: "The Syndicate Lord", emoji: "🖤", hp: 1800, maxHp: 1800, attack: 110, defense: 65, role: "boss", xpReward: 2000, goldReward: 3000, abilities: ["Shadow Dominion", "Syndicate's Wrath", "Eternal Darkness", "Death Gambit"] },
+    ],
+    unlocked: false, completed: false, progress: 0, maxProgress: 1, bgColor: "from-violet-900/20 to-card",
+  },
+];
+
+// ============ MAP 5: INFERNO COLOSSEUM (Lv 50+) ============
+const INFERNO_ZONES: Zone[] = [
+  {
+    id: "molten-gates", name: "Molten Gates", icon: "🔥",
+    description: "The burning entrance. Magma flows like rivers of gold.",
+    requiredLevel: 50,
+    enemies: [
+      { id: "lava-golem", name: "Lava Golem", emoji: "🗿", hp: 700, maxHp: 700, attack: 82, defense: 55, role: "tank", xpReward: 520, goldReward: 440 },
+      { id: "flame-striker", name: "Flame Striker", emoji: "🔥", hp: 550, maxHp: 550, attack: 98, defense: 38, role: "dps", xpReward: 560, goldReward: 470 },
+      { id: "ember-shaman", name: "Ember Shaman", emoji: "🧙", hp: 480, maxHp: 480, attack: 65, defense: 35, role: "healer", xpReward: 480, goldReward: 400, abilities: ["Flame Ward"] },
+      { id: "infernal-sentinel", name: "Infernal Sentinel", emoji: "👹", hp: 950, maxHp: 950, attack: 105, defense: 58, role: "elite", xpReward: 700, goldReward: 600, abilities: ["Magma Eruption", "Scorched Earth"] },
+    ],
+    unlocked: false, completed: false, progress: 0, maxProgress: 10, bgColor: "from-orange-700/20 to-card",
+  },
+  {
+    id: "obsidian-casino", name: "Obsidian Casino", icon: "🖤",
+    description: "A casino carved from volcanic glass. Every chip is forged in fire.",
+    requiredLevel: 52,
+    enemies: [
+      { id: "obsidian-croupier", name: "Obsidian Croupier", emoji: "🎰", hp: 620, maxHp: 620, attack: 92, defense: 42, role: "dps", xpReward: 580, goldReward: 490 },
+      { id: "magma-bouncer", name: "Magma Bouncer", emoji: "🛡️", hp: 780, maxHp: 780, attack: 78, defense: 60, role: "tank", xpReward: 600, goldReward: 500 },
+      { id: "ash-healer", name: "Ash Healer", emoji: "🌋", hp: 520, maxHp: 520, attack: 60, defense: 38, role: "healer", xpReward: 520, goldReward: 430, abilities: ["Volcanic Mend"] },
+      { id: "obsidian-king", name: "Obsidian King", emoji: "♠️", hp: 1100, maxHp: 1100, attack: 112, defense: 62, role: "boss", xpReward: 800, goldReward: 680, abilities: ["Glass Shatter", "Obsidian Cage"] },
+    ],
+    unlocked: false, completed: false, progress: 0, maxProgress: 10, bgColor: "from-gray-900/20 to-card",
+  },
+  {
+    id: "dragon-den", name: "Dragon's Gambling Den", icon: "🐉",
+    description: "Ancient dragons gamble for souls. The stakes are beyond mortal comprehension.",
+    requiredLevel: 55,
+    enemies: [
+      { id: "drake-guard", name: "Drake Guard", emoji: "🐲", hp: 850, maxHp: 850, attack: 95, defense: 58, role: "tank", xpReward: 650, goldReward: 550 },
+      { id: "wyrm-dealer", name: "Wyrm Dealer", emoji: "🐍", hp: 700, maxHp: 700, attack: 108, defense: 45, role: "dps", xpReward: 680, goldReward: 570 },
+      { id: "dragon-mystic", name: "Dragon Mystic", emoji: "✨", hp: 600, maxHp: 600, attack: 72, defense: 40, role: "healer", xpReward: 600, goldReward: 500, abilities: ["Dragon's Blessing"] },
+      { id: "elder-drake", name: "Elder Drake", emoji: "🐉", hp: 1400, maxHp: 1400, attack: 120, defense: 68, role: "elite", xpReward: 900, goldReward: 780, abilities: ["Dragon Breath", "Wing Gust"] },
+    ],
+    unlocked: false, completed: false, progress: 0, maxProgress: 10, bgColor: "from-amber-700/20 to-card",
+  },
+  {
+    id: "hellfire-arena", name: "Hellfire Arena", icon: "⚔️",
+    description: "The ultimate fighting pit. Champions burn or rise.",
+    requiredLevel: 58,
+    enemies: [
+      { id: "hellfire-champion", name: "Hellfire Champion", emoji: "🏆", hp: 900, maxHp: 900, attack: 115, defense: 52, role: "dps", xpReward: 750, goldReward: 630 },
+      { id: "inferno-warden", name: "Inferno Warden", emoji: "🔱", hp: 1000, maxHp: 1000, attack: 90, defense: 68, role: "tank", xpReward: 780, goldReward: 650 },
+      { id: "flame-oracle", name: "Flame Oracle", emoji: "🔮", hp: 650, maxHp: 650, attack: 78, defense: 42, role: "healer", xpReward: 680, goldReward: 560, abilities: ["Infernal Vision"] },
+      { id: "arena-overlord", name: "Arena Overlord", emoji: "😈", hp: 1600, maxHp: 1600, attack: 130, defense: 72, role: "elite", xpReward: 1000, goldReward: 850, abilities: ["Hellfire Storm", "Arena Crush", "Burning Chains"] },
+    ],
+    unlocked: false, completed: false, progress: 0, maxProgress: 10, bgColor: "from-red-900/20 to-card",
+  },
+  {
+    id: "inferno-throne", name: "The Inferno Throne", icon: "👑🔥",
+    description: "The God of Flames. The final challenge for legends only.",
+    requiredLevel: 60,
+    enemies: [
+      { id: "throne-guardian", name: "Throne Guardian", emoji: "⚜️", hp: 1100, maxHp: 1100, attack: 110, defense: 70, role: "tank", xpReward: 900, goldReward: 750 },
+      { id: "inferno-blade", name: "Inferno Blade", emoji: "🗡️", hp: 900, maxHp: 900, attack: 135, defense: 55, role: "dps", xpReward: 920, goldReward: 780 },
+      { id: "inferno-god", name: "Ignis the Eternal Flame", emoji: "👑🔥", hp: 3000, maxHp: 3000, attack: 160, defense: 85, role: "boss", xpReward: 5000, goldReward: 8000, abilities: ["Eternal Inferno", "God's Wrath", "Molten Apocalypse", "Flame Rebirth", "World Ender"] },
+    ],
+    unlocked: false, completed: false, progress: 0, maxProgress: 1, bgColor: "from-orange-900/30 to-card",
+  },
+];
+
 // ============ GAME MAPS ============
 export const GAME_MAPS: GameMap[] = [
   { id: "fury-strip", name: "FURY's Strip", icon: "🦝", description: "The original casino strip ruled by FURY the raccoon.", zones: ZONES },
   { id: "rian-strip", name: "Rian's Royal Strip", icon: "👑", description: "An opulent casino empire ruled by the House King.", zones: RIAN_ZONES },
   { id: "steve-underworld", name: "Steve's Underworld", icon: "🔨", description: "A brutal underground circuit controlled by the Banhammer.", zones: STEVE_ZONES },
+  { id: "shadow-syndicate", name: "Shadow Syndicate", icon: "🖤", description: "A hidden criminal empire cloaked in darkness. Level 40+ only.", zones: SHADOW_ZONES },
+  { id: "inferno-colosseum", name: "Inferno Colosseum", icon: "🔥", description: "The ultimate endgame arena forged in hellfire. Level 50+ only.", zones: INFERNO_ZONES },
 ];
 
 // ============ DUNGEONS ============
