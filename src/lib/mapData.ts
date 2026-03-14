@@ -207,64 +207,64 @@ const SHADOW_ZONES: Zone[] = [
   },
 ];
 
-// ============ MAP 5: INFERNO COLOSSEUM (Lv 50+) ============
+// ============ MAP 5: EMILY'S INFERNO COLOSSEUM (Lv 50+) ============
 const INFERNO_ZONES: Zone[] = [
   {
-    id: "molten-gates", name: "Molten Gates", icon: "🔥",
-    description: "The burning entrance. Magma flows like rivers of gold.",
+    id: "ari-molten", name: "Ari's Molten Gates", icon: "🔥",
+    description: "Ari guards the burning entrance. Magma flows like rivers of gold.",
     requiredLevel: 50,
     enemies: [
       { id: "lava-golem", name: "Lava Golem", emoji: "🗿", hp: 700, maxHp: 700, attack: 82, defense: 55, role: "tank", xpReward: 520, goldReward: 440 },
       { id: "flame-striker", name: "Flame Striker", emoji: "🔥", hp: 550, maxHp: 550, attack: 98, defense: 38, role: "dps", xpReward: 560, goldReward: 470 },
       { id: "ember-shaman", name: "Ember Shaman", emoji: "🧙", hp: 480, maxHp: 480, attack: 65, defense: 35, role: "healer", xpReward: 480, goldReward: 400, abilities: ["Flame Ward"] },
-      { id: "infernal-sentinel", name: "Infernal Sentinel", emoji: "👹", hp: 950, maxHp: 950, attack: 105, defense: 58, role: "elite", xpReward: 700, goldReward: 600, abilities: ["Magma Eruption", "Scorched Earth"] },
+      { id: "ari-boss", name: "Ari the Gatekeeper", emoji: "👹", hp: 950, maxHp: 950, attack: 105, defense: 58, role: "elite", xpReward: 700, goldReward: 600, abilities: ["Magma Eruption", "Scorched Earth"] },
     ],
     unlocked: false, completed: false, progress: 0, maxProgress: 10, bgColor: "from-orange-700/20 to-card",
   },
   {
-    id: "obsidian-casino", name: "Obsidian Casino", icon: "🖤",
-    description: "A casino carved from volcanic glass. Every chip is forged in fire.",
+    id: "lily-obsidian", name: "Lily's Obsidian Casino", icon: "🖤",
+    description: "Lily's casino carved from volcanic glass. Every chip is forged in fire.",
     requiredLevel: 52,
     enemies: [
       { id: "obsidian-croupier", name: "Obsidian Croupier", emoji: "🎰", hp: 620, maxHp: 620, attack: 92, defense: 42, role: "dps", xpReward: 580, goldReward: 490 },
       { id: "magma-bouncer", name: "Magma Bouncer", emoji: "🛡️", hp: 780, maxHp: 780, attack: 78, defense: 60, role: "tank", xpReward: 600, goldReward: 500 },
       { id: "ash-healer", name: "Ash Healer", emoji: "🌋", hp: 520, maxHp: 520, attack: 60, defense: 38, role: "healer", xpReward: 520, goldReward: 430, abilities: ["Volcanic Mend"] },
-      { id: "obsidian-king", name: "Obsidian King", emoji: "♠️", hp: 1100, maxHp: 1100, attack: 112, defense: 62, role: "boss", xpReward: 800, goldReward: 680, abilities: ["Glass Shatter", "Obsidian Cage"] },
+      { id: "lily-boss", name: "Lily the Obsidian Queen", emoji: "♠️", hp: 1100, maxHp: 1100, attack: 112, defense: 62, role: "boss", xpReward: 800, goldReward: 680, abilities: ["Glass Shatter", "Obsidian Cage"] },
     ],
     unlocked: false, completed: false, progress: 0, maxProgress: 10, bgColor: "from-gray-900/20 to-card",
   },
   {
-    id: "dragon-den", name: "Dragon's Gambling Den", icon: "🐉",
-    description: "Ancient dragons gamble for souls. The stakes are beyond mortal comprehension.",
+    id: "camilla-dragon", name: "Camilla's Dragon Den", icon: "🐉",
+    description: "Camilla tames ancient dragons. The stakes are beyond mortal comprehension.",
     requiredLevel: 55,
     enemies: [
       { id: "drake-guard", name: "Drake Guard", emoji: "🐲", hp: 850, maxHp: 850, attack: 95, defense: 58, role: "tank", xpReward: 650, goldReward: 550 },
       { id: "wyrm-dealer", name: "Wyrm Dealer", emoji: "🐍", hp: 700, maxHp: 700, attack: 108, defense: 45, role: "dps", xpReward: 680, goldReward: 570 },
       { id: "dragon-mystic", name: "Dragon Mystic", emoji: "✨", hp: 600, maxHp: 600, attack: 72, defense: 40, role: "healer", xpReward: 600, goldReward: 500, abilities: ["Dragon's Blessing"] },
-      { id: "elder-drake", name: "Elder Drake", emoji: "🐉", hp: 1400, maxHp: 1400, attack: 120, defense: 68, role: "elite", xpReward: 900, goldReward: 780, abilities: ["Dragon Breath", "Wing Gust"] },
+      { id: "camilla-boss", name: "Camilla the Dragon Tamer", emoji: "🐉", hp: 1400, maxHp: 1400, attack: 120, defense: 68, role: "elite", xpReward: 900, goldReward: 780, abilities: ["Dragon Breath", "Wing Gust"] },
     ],
     unlocked: false, completed: false, progress: 0, maxProgress: 10, bgColor: "from-amber-700/20 to-card",
   },
   {
-    id: "hellfire-arena", name: "Hellfire Arena", icon: "⚔️",
-    description: "The ultimate fighting pit. Champions burn or rise.",
+    id: "max-hellfire", name: "Max's Hellfire Arena", icon: "⚔️",
+    description: "Max's ultimate fighting pit. Champions burn or rise.",
     requiredLevel: 58,
     enemies: [
       { id: "hellfire-champion", name: "Hellfire Champion", emoji: "🏆", hp: 900, maxHp: 900, attack: 115, defense: 52, role: "dps", xpReward: 750, goldReward: 630 },
       { id: "inferno-warden", name: "Inferno Warden", emoji: "🔱", hp: 1000, maxHp: 1000, attack: 90, defense: 68, role: "tank", xpReward: 780, goldReward: 650 },
       { id: "flame-oracle", name: "Flame Oracle", emoji: "🔮", hp: 650, maxHp: 650, attack: 78, defense: 42, role: "healer", xpReward: 680, goldReward: 560, abilities: ["Infernal Vision"] },
-      { id: "arena-overlord", name: "Arena Overlord", emoji: "😈", hp: 1600, maxHp: 1600, attack: 130, defense: 72, role: "elite", xpReward: 1000, goldReward: 850, abilities: ["Hellfire Storm", "Arena Crush", "Burning Chains"] },
+      { id: "max-boss", name: "Max the Hellfire King", emoji: "😈", hp: 1600, maxHp: 1600, attack: 130, defense: 72, role: "elite", xpReward: 1000, goldReward: 850, abilities: ["Hellfire Storm", "Arena Crush", "Burning Chains"] },
     ],
     unlocked: false, completed: false, progress: 0, maxProgress: 10, bgColor: "from-red-900/20 to-card",
   },
   {
-    id: "inferno-throne", name: "The Inferno Throne", icon: "👑🔥",
-    description: "The God of Flames. The final challenge for legends only.",
+    id: "emily-throne", name: "Emily's Inferno Throne", icon: "👑🔥",
+    description: "Emily the Eternal Flame. The final challenge for legends only.",
     requiredLevel: 60,
     enemies: [
       { id: "throne-guardian", name: "Throne Guardian", emoji: "⚜️", hp: 1100, maxHp: 1100, attack: 110, defense: 70, role: "tank", xpReward: 900, goldReward: 750 },
       { id: "inferno-blade", name: "Inferno Blade", emoji: "🗡️", hp: 900, maxHp: 900, attack: 135, defense: 55, role: "dps", xpReward: 920, goldReward: 780 },
-      { id: "inferno-god", name: "Ignis the Eternal Flame", emoji: "👑🔥", hp: 3000, maxHp: 3000, attack: 160, defense: 85, role: "boss", xpReward: 5000, goldReward: 8000, abilities: ["Eternal Inferno", "God's Wrath", "Molten Apocalypse", "Flame Rebirth", "World Ender"] },
+      { id: "emily-boss", name: "Emily the Eternal Flame", emoji: "👑🔥", hp: 3000, maxHp: 3000, attack: 160, defense: 85, role: "boss", xpReward: 5000, goldReward: 8000, abilities: ["Eternal Inferno", "God's Wrath", "Molten Apocalypse", "Flame Rebirth", "World Ender"] },
     ],
     unlocked: false, completed: false, progress: 0, maxProgress: 1, bgColor: "from-orange-900/30 to-card",
   },
