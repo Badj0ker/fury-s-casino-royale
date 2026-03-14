@@ -3,11 +3,15 @@ import { useNavigate } from "react-router-dom";
 import worldMapBg from "@/assets/world-map-bg.png";
 import worldMapRian from "@/assets/world-map-rian.png";
 import worldMapSteve from "@/assets/world-map-steve.png";
+import worldMapShadow from "@/assets/world-map-shadow.png";
+import worldMapInferno from "@/assets/world-map-inferno.png";
 
 const MAP_BACKGROUNDS: Record<string, string> = {
   "fury-strip": worldMapBg,
   "rian-strip": worldMapRian,
   "steve-underworld": worldMapSteve,
+  "shadow-syndicate": worldMapShadow,
+  "inferno-colosseum": worldMapInferno,
 };
 
 // Zone positions on each map (percentage-based)
@@ -32,6 +36,20 @@ const ZONE_POSITIONS: Record<string, { top: string; left: string }[]> = {
     { top: "42%", left: "65%" },
     { top: "25%", left: "35%" },
     { top: "8%", left: "55%" },
+  ],
+  "shadow-syndicate": [
+    { top: "80%", left: "25%" },
+    { top: "62%", left: "60%" },
+    { top: "48%", left: "30%" },
+    { top: "32%", left: "70%" },
+    { top: "10%", left: "50%" },
+  ],
+  "inferno-colosseum": [
+    { top: "78%", left: "50%" },
+    { top: "60%", left: "18%" },
+    { top: "45%", left: "72%" },
+    { top: "28%", left: "42%" },
+    { top: "8%", left: "65%" },
   ],
 };
 
